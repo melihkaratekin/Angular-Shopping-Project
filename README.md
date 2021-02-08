@@ -13,7 +13,7 @@ This project is a simple shopping site developed with Angular. There is a json f
 > cd db <br>
 > json-server --watch shop.json
 
-3- Finally, we will run the project on localhost.
+3- Finally, we will open a new terminal and run the project on localhost.
 > ng serve --open
 
 WARNING!
