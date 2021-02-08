@@ -6,11 +6,11 @@ Hi everyone!
 This project is a simple shopping site developed with Angular. There is a json file with products and categories in the "db" folder. The other folder has Angular side of the project. To run the project without any problems, you need to follow some steps.
 
 1- First, you need to go to the "shop" folder from the terminal and install the Node modules used in the project.
-> cd shop
+> cd shop <br>
 > npm install
 
 2- Then, you need to go to the "db" folder from the terminal and launch json-server. Thus, a fake API is created for the project and the services start running.
-> cd db
+> cd db <br>
 > json-server --watch shop.json
 
 3- Finally, we will run the project on localhost.
