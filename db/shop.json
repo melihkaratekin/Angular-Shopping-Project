@@ -1,0 +1,62 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Monitor",
+      "price": 1500,
+      "categoryId": 1,
+      "description": "Asus",
+      "imageURL": "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "price": 500,
+      "categoryId": 1,
+      "description": "Logitech",
+      "imageURL": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80"
+    },
+    {
+      "id": 3,
+      "name": "SSD",
+      "price": 400,
+      "categoryId": 1,
+      "description": "Philips",
+      "imageURL": "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+    },
+    {
+      "id": 4,
+      "name": "ESC",
+      "price": 2500,
+      "categoryId": 2,
+      "description": "General Electric",
+      "imageURL": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80"
+    },
+    {
+      "id": 5,
+      "name": "EMC",
+      "price": 1500,
+      "categoryId": 2,
+      "description": "Samsung",
+      "imageURL": "https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+    },
+    {
+      "id": 6,
+      "name": "ELC",
+      "price": 4500,
+      "categoryId": 2,
+      "description": "Asus",
+      "imageURL": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=747&q=80"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Computer"
+    },
+    {
+      "id": 2,
+      "name": "Electronic"
+    }
+  ]
+}
