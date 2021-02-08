@@ -1,0 +1,63 @@
+<h3> Add Product - ReactiveForms </h3>
+<!--
+    Form Elemanları İçin Özel Durumlar
+    dirty    = Form elemanına bir şeyler yazılıp silinmesi.
+    touched  = Form elemanına dokunup hiçbir şey yazmaması.
+    pristine = Form elemanına hiçbir şey yapılmadıysa. (ilk açılış hali)
+-->
+<form [formGroup]="productAddForm" (ngSubmit)="add()">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product Name"
+        formControlName="name" id="name" name="name" required>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="productAddForm.get('name').hasError('required') && productAddForm.get('name').dirty" class="alert alert-danger">
+            Product name is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product Description"
+        formControlName="description" id="description" name="description" required>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="productAddForm.get('description').hasError('required') && productAddForm.get('description').dirty" class="alert alert-danger">
+            Product description is required.
+        </div>
+    </div> 
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product Image"
+        formControlName="imageURL" id="imageURL" name="imageURL" required>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="productAddForm.get('imageURL').hasError('required') && productAddForm.get('imageURL').dirty" class="alert alert-danger">
+            Product image is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product Price"
+        formControlName="price" id="price" name="price" required>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="productAddForm.get('price').hasError('required') && productAddForm.get('price').dirty" class="alert alert-danger">
+            Product price is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <select class="form-control"
+        formControlName="categoryId" id="categoryId" name="categoryId" required>
+            <option *ngFor="let category of categories" [value]="category.id">
+                {{category.name}}
+            </option>
+        </select>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="productAddForm.get('categoryId').hasError('required') && productAddForm.get('categoryId').touched" class="alert alert-danger">
+            Product category is required.
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="productAddForm.invalid">
+        Add
+    </button>
+
+</form>

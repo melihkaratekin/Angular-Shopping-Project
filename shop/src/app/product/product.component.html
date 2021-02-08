@@ -1,0 +1,35 @@
+<h5 *ngIf="products; else noProduct">{{ title }}</h5>
+<hr />
+
+<ng-template #noProduct>
+  <div class="alert alert-danger" role="alert">No product to show.</div>
+</ng-template>
+
+<div class="form-group">
+  <input
+    class="form-control"
+    placeholder="Search Product"
+    [(ngModel)]="filterText"
+  />
+  <small class="form-text text-muted" *ngIf="filterText"
+    >now {{ filterText }}</small
+  >
+</div>
+
+<div class="row">
+  <div
+    *ngFor="let product of products | productFilter: filterText"
+    class="card"
+    style="width: 18rem"
+  >
+    <img [src]="product.imageURL" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ product.name }} <br />
+        {{ product.price | currency: "TRY":true }}
+      </h5>
+      <p class="card-text">{{ product.description }}</p>
+      <a (click)="addToCart(product)" class="btn btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</div>

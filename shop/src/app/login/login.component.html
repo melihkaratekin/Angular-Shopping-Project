@@ -1,0 +1,12 @@
+<div class="alert alert-success" style="margin:auto" *ngIf="isLoggedIn()==true">
+    Login is successful.
+</div>
+
+<form  #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+    <input type="text" class="form-control" placeholder="Username" 
+    id="username" name="username" #username="ngModel" [(ngModel)]="model.username" required autofocus>
+    <input type="password" class="form-control" placeholder="Password" 
+    id="password" name="password" #password="ngModel" [(ngModel)]="model.password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>

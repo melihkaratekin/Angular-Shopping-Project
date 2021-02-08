@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Cart</h5>
+            <hr>
+            <div class="alert alert-warning" *ngIf="cartItems.length == 0">
+                Your cart is empty.
+            </div>
+            <ul class="list-group" *ngIf="cartItems.length > 0">
+                <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of cartItems">
+                  {{item.name}}
+                  <span class="badge badge-success badge-pill">Quantity: 1 &nbsp; &nbsp; | &nbsp; &nbsp; Price: {{item.price}}</span>
+                </li>
+            </ul>
+            <table class="table" *ngIf="cartItems.length > 0">
+                  <tr class="text-center">
+                    <td>Total Price:</td>
+                    <td>{{cartTotal}}</td>
+                  </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

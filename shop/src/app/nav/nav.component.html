@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Angular Shopping</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/'> Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/product-add-1'>Add Product 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='/product-add-2'>Add Product 2</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <div class="alert alert-warning" style="margin:auto" *ngIf="isLoggedIn()==false">
+          You are not logged in.
+        </div>
+        <a class="nav-link" *ngIf="isLoggedIn()==false" routerLink='/login'>Sign In</a>
+        <div class="alert alert-success" style="margin:auto" *ngIf="isLoggedIn()==true">
+          Welcome admin.
+        </div>
+        <a class="nav-link" *ngIf="isLoggedIn()==true" (click)="isLogOut()" routerLink='/'>Logout</a>
+      </form>
+    </div>
+  </nav>

@@ -1,0 +1,63 @@
+<h3> Add Product - NgForms </h3>
+<!--
+    Form Elemanları İçin Özel Durumlar
+    dirty    = Form elemanına bir şeyler yazılıp silinmesi.
+    touched  = Form elemanına dokunup hiçbir şey yazmaması.
+    pristine = Form elemanına hiçbir şey yapılmadıysa. (ilk açılış hali)
+-->
+<form #productAddForm="ngForm" (ngSubmit)="add(productAddForm)">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product Name"
+        #name="ngModel" [(ngModel)]="model.name" id="name" name="name" required>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="name.invalid&&name.dirty" class="alert alert-danger">
+            Product name is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product Description"
+        #description="ngModel" [(ngModel)]="model.description" id="description" name="description" required>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="description.invalid&&description.dirty" class="alert alert-danger">
+            Product description is required.
+        </div>
+    </div> 
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product Image"
+        #imageURL="ngModel" [(ngModel)]="model.imageURL" id="imageURL" name="imageURL" required>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="imageURL.invalid&&imageURL.dirty" class="alert alert-danger">
+            Product image is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Product Price"
+        #price="ngModel" [(ngModel)]="model.price" id="price" name="price" required>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="price.invalid&&price.dirty" class="alert alert-danger">
+            Product price is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <select class="form-control" #categoryId="ngModel" [(ngModel)]="model.categoryId"
+        id="categoryId" name="categoryId" required>
+            <option *ngFor="let category of categories" [value]="category.id">
+                {{category.name}}
+            </option>
+        </select>
+        <!-- Required olduğu için kurallara uymazsa (invalid) 
+        veya yazıp sildiyse (dirty) bunun için kontrol gerekiyor. -->
+        <div *ngIf="categoryId.invalid&&categoryId.touched" class="alert alert-danger">
+            Product category is required
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="productAddForm.invalid">
+        Add
+    </button>
+
+</form>
